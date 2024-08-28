@@ -3,6 +3,9 @@ import { BookmarkItem, bookmarkManager } from './bookmarkManager';
 import { BookmarksTreeDataProvider } from './bookmarksTreeDataProvider';
 
 export function activate(context: vscode.ExtensionContext) {
+    
+    bookmarkManager.setContext(context);
+    
     const treeDataProvider = new BookmarksTreeDataProvider();
     vscode.window.registerTreeDataProvider('bookmarksExplorer', treeDataProvider);
 
